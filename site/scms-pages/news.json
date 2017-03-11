@@ -1,0 +1,30 @@
+[
+    
+    {
+        "type" : "full-screen-landing-image",
+        "resource-img-src" : "scms-content/images/scms-landscape.jpg",
+        "module" : "core",
+        "text" : "Quoi de neuf ?",
+        "element-height": "350px"
+    },
+    {
+        "type":"content-element",
+        "content-type" : "text-array",
+        "content": [
+            
+            {
+                "type" : "paragraph-element",
+                "text" : "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum vel amet fuga sit aliquam necessitatibus dolorum, perferendis officiis ipsum at debitis reiciendis magni. Dolor, praesentium. Necessitatibus autem excepturi ducimus reiciendis!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum vel amet fuga sit aliquam necessitatibus dolorum, perferendis officiis ipsum at debitis reiciendis magni. Dolor, praesentium. Necessitatibus autem excepturi ducimus reiciendis!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum vel amet fuga sit aliquam necessitatibus dolorum, perferendis officiis ipsum at debitis reiciendis magni. Dolor, praesentium. Necessitatibus autem excepturi ducimus reiciendis!"
+            },
+            {
+                "type" : "paragraph-element",
+                "text" : "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum vel amet fuga sit aliquam necessitatibus dolorum, perferendis officiis ipsum at debitis reiciendis magni. Dolor, praesentium. Necessitatibus autem excepturi ducimus reiciendis!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum vel amet fuga sit aliquam necessitatibus dolorum, perferendis officiis ipsum at debitis reiciendis magni. Dolor, praesentium. Necessitatibus autem excepturi ducimus reiciendis!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum vel amet fuga sit aliquam necessitatibus dolorum, perferendis officiis ipsum at debitis reiciendis magni. Dolor, praesentium. Necessitatibus autem excepturi ducimus reiciendis!"
+            }
+        ]
+    },
+    {
+        "type" : "footer-element",
+        "module" : "core",
+        "copyright_name" : "Simon Loir"
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "type" : "404-div",
+        "content" : "Vous êtes perdu ?",
+        "module" : "core"
+    },
+    {
+        "type" : "content-element",
+        "module" : "core",
+        "content-type" : "text-only",
+        "content" : "Cette page n'a pas pu être trouvée ! Vous pouvez contater l'administrateur s'il s'agit d'une erreur."
+    },
+    {
+        "type" : "footer-element",
+        "module" : "core",
+        "copyright_name" : "Simon Loir"
+    }
+]
