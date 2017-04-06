@@ -265,6 +265,7 @@ $('#scms-new-element').click(function () {
             to_add = "text-paragraph";
             x_window.remove();
         });
+    
 });
 
 var to_add = "";
@@ -307,6 +308,7 @@ $('.scms-content-block, .scms-footer, .scms-compare-block').click(function () {
     to_add = "";
 
 });
+
 
 </script>
 <?php } ?>

@@ -19,6 +19,7 @@
     </div>
     <div class="scms-content-container">
        <?php
+            if(is_file("blocked")){include "scms-core/maintenance.php"; exit();}
             if (isset($_GET["p"])){$page_global = $_GET["p"];}else{$page_global = "home";}
             include "scms-core/pg-security.php";
             include "scms-core/page-loader.php";

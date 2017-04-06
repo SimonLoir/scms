@@ -40,7 +40,7 @@ $ic = true;
             if(is_file("pages/" . $page .".php")){
                 include "pages/" . $page .".php";
             }else{
-                echo "x-fatal-error";
+                echo "La page que vous tentez d'atteindre est indisponible";
             }
 
             ?>

@@ -1,11 +1,7 @@
 <?php
 if(is_file('../site-infos')){
-    
     $site_infos = json_decode(file_get_contents('../site-infos'), true);
-
-    //var_dump($site_infos);
-
-?>
+?> 
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -24,9 +20,13 @@ if(is_file('../site-infos')){
             <p>Nous préparons votre site web...</p>
         </div>
     </div>
+    <script>
+    var global_usr_name = "<?= $_GET["username"] ?>";
+    </script>
     <script src="extjs.js"></script>
     <script src="installer.js"></script>
 </body>
+
 <style>
 .top-nav-bar{
     background:#1976d2;

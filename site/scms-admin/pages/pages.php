@@ -31,7 +31,7 @@ if($ic && is_file("../scms-pages/base.json")){
 
     <form action="?p=new_page" method="post">
         <input type="text" name="page_name" placeholder="Nom de la page" style="width:200px;">
-        <input type="submit" value="Créer cette page">
+        <input type="submit" value="Créer cette page" name="new_page">
     </form>
 
 

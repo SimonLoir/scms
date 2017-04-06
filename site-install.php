@@ -134,7 +134,7 @@ if(isset($_GET['force_progress'])){
                             $a['website_type'] = $site_type;
                             $a["website_name"] = $name;
 
-                            header('Location: site-install.php?force_progress=2');
+                            header('Location: site-install.php?force_progress=2&username=' . $a["user_name"]);
                         }
 
                         file_put_contents('site-infos', json_encode($a));
@@ -158,11 +158,10 @@ if(isset($_GET['force_progress'])){
         <?php
     }elseif($progress_state == "2"){
 
-        //file_put_contents('site-infos', urldecode($_GET["user_json"]));
 
         unlink("site-status");
 
-        header('Location: installer');
+        header('Location: installer/index.php?username=' . $_GET["username"]);
 
     }
     ?>

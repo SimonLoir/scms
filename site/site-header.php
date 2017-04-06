@@ -1,1 +1,1 @@
-<a href="?p=home" class="scms-header-actions-link">Home</a>
+<a href="?p=home" class="scms-header-actions-link">Home</a><a href="?p=pricing" class="scms-header-actions-link">Pricing</a>

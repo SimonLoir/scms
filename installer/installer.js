@@ -6,10 +6,13 @@ AR.GET('install.php?phase=1', function (data) {
         setTimeout(function () {
             AR.GET('install.php?phase=2', function (data2) {
                 if (data2 == "IP2Ok") {
+                    /*
+                    Old way
                     $('.content').html("Votre site est configuré !");
                     setTimeout(function() {
                         window.location.href = "../";
-                    }, 2500);
+                    }, 2500);*/
+                    $('.content').html('Votre site est configuré ! <br /> <div> Nom d\'utilisateur : ' + global_usr_name + '<br />Mot de passe : celui que vous avez défini il y a 2 étapes.</div> <a href="../scms-admin">Me connecter sur mon site</a>');
                 } else {
                     IFailure();
                 }
