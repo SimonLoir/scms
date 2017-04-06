@@ -1,18 +1,1 @@
-[
-    {
-        "type" : "404-div",
-        "content" : "Vous êtes perdu ?",
-        "module" : "core"
-    },
-    {
-        "type" : "content-element",
-        "module" : "core",
-        "content-type" : "text-only",
-        "content" : "Cette page n'a pas pu être trouvée ! Vous pouvez contater l'administrateur s'il s'agit d'une erreur."
-    },
-    {
-        "type" : "footer-element",
-        "module" : "core",
-        "copyright_name" : "Simon Loir"
-    }
-]
+[{"type":"full-screen-landing-image","resource-img-src":"scms-content/images/404.jpg","element-height":"700px","module":"core","text":"Vous êtes perdu ?"},{"type":"content-element","module":"core","content-type":"text-array","content":[{"type":"title-element","module":"core","text":"Erreur 404 : cette page est introuvable"},{"type":"paragraph-element","module":"core","text":"Cette page n'a pas pu être trouvée. Si vous pensez qu'il s'agit d'une erreur, vous pouvez toujours contacter l'administrateur du site web."}]},{"type":"footer-element","module":"core","copyright_name":"Simon Loir"}]

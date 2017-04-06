@@ -206,10 +206,12 @@ function getElementArray(element){
 }
 
 function getContent(e){
-     var array = [];
+    var array = [];
+    
     var direct_nodes = e.childNodes;
 
     for (var i = 0; i < direct_nodes.length; i++) {
+
         var element = direct_nodes[i];
         
         if(element.nodeType == 1 && element.hasAttribute('data-core-no-index') == false ){
