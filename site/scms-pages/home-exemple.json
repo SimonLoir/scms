@@ -1,23 +1,29 @@
 [
-    
     {
-        "type" : "full-screen-landing-image",
-        "resource-img-src" : "scms-content/images/scms-landscape.jpg",
-        "module" : "core",
-        "text" : "Quoi de neuf ?",
-        "element-height": "350px"
+        "type":"page-infos",
+        "infos" : {
+
+        }
     },
     {
-        "type":"content-element",
+        "type" : "full-screen-landing-image",
+        "resource-img-src" : "scms-content/images/scms-landscape-2.jpg",
+        "module" : "core",
+        "text" : "S CMS"
+    },
+    {
+        "type" : "content-element",
+        "module" : "core",
         "content-type" : "text-array",
-        "content": [
-            
+        "content" : [
             {
-                "type" : "paragraph-element",
-                "text" : "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum vel amet fuga sit aliquam necessitatibus dolorum, perferendis officiis ipsum at debitis reiciendis magni. Dolor, praesentium. Necessitatibus autem excepturi ducimus reiciendis!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum vel amet fuga sit aliquam necessitatibus dolorum, perferendis officiis ipsum at debitis reiciendis magni. Dolor, praesentium. Necessitatibus autem excepturi ducimus reiciendis!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum vel amet fuga sit aliquam necessitatibus dolorum, perferendis officiis ipsum at debitis reiciendis magni. Dolor, praesentium. Necessitatibus autem excepturi ducimus reiciendis!"
+                "type":"title-element",
+                "module":"core", 
+                "text" : "A new way to make web apps"
             },
             {
-                "type" : "paragraph-element",
+                "type":"paragraph-element",
+                "module":"core", 
                 "text" : "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum vel amet fuga sit aliquam necessitatibus dolorum, perferendis officiis ipsum at debitis reiciendis magni. Dolor, praesentium. Necessitatibus autem excepturi ducimus reiciendis!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum vel amet fuga sit aliquam necessitatibus dolorum, perferendis officiis ipsum at debitis reiciendis magni. Dolor, praesentium. Necessitatibus autem excepturi ducimus reiciendis!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum vel amet fuga sit aliquam necessitatibus dolorum, perferendis officiis ipsum at debitis reiciendis magni. Dolor, praesentium. Necessitatibus autem excepturi ducimus reiciendis!"
             }
         ]

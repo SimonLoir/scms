@@ -86,8 +86,8 @@ if(isset($_GET['force_progress'])){
                                 "website_theme" => "default",
                                 "website_copyright" => "true"
                             ];
-
-                            header('Location: site-install.php?force_progress=1&user_json=' . urlencode(json_encode($user_infos)));
+                            file_put_contents('site-infos', urlencode(json_encode($user_infos)));
+                            header('Location: site-install.php?force_progress=1');
                         }
 
                     }
@@ -129,13 +129,15 @@ if(isset($_GET['force_progress'])){
                         }
 
                         if($e == false){
-                            $a = json_decode(urldecode($_GET['user_json']), true);
+                            $a = json_decode(urldecode(file_get_contents("site-infos")), true);
 
                             $a['website_type'] = $site_type;
                             $a["website_name"] = $name;
 
-                            header('Location: site-install.php?force_progress=2&user_json=' . urlencode(json_encode($a)));
+                            header('Location: site-install.php?force_progress=2');
                         }
+
+                        file_put_contents('site-infos', json_encode($a));
                     }
                 ?>
                 <h2>Configurez votre site</h2>
@@ -156,7 +158,7 @@ if(isset($_GET['force_progress'])){
         <?php
     }elseif($progress_state == "2"){
 
-        file_put_contents('site-infos', urldecode($_GET["user_json"]));
+        //file_put_contents('site-infos', urldecode($_GET["user_json"]));
 
         unlink("site-status");
 

@@ -1,0 +1,1 @@
+<a href="?p=home" class="scms-header-actions-link">Home</a>

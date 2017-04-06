@@ -5,6 +5,7 @@ if(!isset($_SESSION["scms-global-admin"])){
     header('Location: login.php');
 }
 
+$ic = true;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -12,8 +13,8 @@ if(!isset($_SESSION["scms-global-admin"])){
     <meta charset="UTF-8">
     <title>Document</title>
     <link rel="stylesheet" href="../scms-theme/style-admin-panel.css">
-    <style>
-    a{text-decoration: none;cursor:pointer;}& a button{cursor:pointer;}</style>
+    <script src="../scms-core/extjs.js"></script>
+    <style>a{text-decoration: none;cursor:pointer;}& a button{cursor:pointer;}</style>
 </head>
 <body>
     <div class="main-panel">
@@ -26,8 +27,7 @@ if(!isset($_SESSION["scms-global-admin"])){
             <a href="?p=pages"><button id="pages">Pages</button></a>
             <a href="?p=admin-actions"><button id="admin-actions">Super admins</button></a>
             
-            
-            <span>&copy; 2017 - Simon Loir</span>
+            <span>&copy; 2017 - Simon Loir</span>
         </div>
         <div class="content-panel">
             

@@ -136,3 +136,54 @@ body .scms-content-block{
         border:1px solid darken(crimson, 3%);
     }
 }
+
+
+.scms-admin-assistant{
+    transition:0.75s;
+    
+    position: fixed;
+    top: 66px;left: 0;bottom: 0;
+    width: 120px;
+    background: rgba(0,0,0,0.85);
+    & button{
+    transition:0.75s;
+        
+        background: rgba(0,0,0,0.25);
+        padding: 15px;
+        margin-top: 15px;
+        color:white;
+        border:none;
+        width: 100%;
+        cursor: pointer;
+        &:hover{
+            background:rgba(255,255,255,0.55);
+            color:black;
+        }
+    }
+}
+
+.scms-element-window{
+    transition:0.75s;
+    
+    z-index:100;
+    position: fixed;
+    top: 5px;left: 5px;right: 5px;bottom: 5px;
+    background:rgba(255,255,255,0.95);
+    padding: 25px;
+    overflow: auto;
+}
+
+.scms-editor-delete-element{
+    border-radius: 5px;
+    transition:0.75s;
+    background:lighten(#E33434, 2%);
+    float:right;
+    color:white;
+    border:none;
+    padding: 8px;
+    padding-left: 15px;padding-right: 15px;
+    cursor: pointer;
+    &:hover{
+        background:darken(#E33434, 5%);
+    }
+}
