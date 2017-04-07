@@ -12,6 +12,7 @@ if($_GET['phase'] == 1){
         "scms-content/images",
         "scms-core",
         "scms-modules",
+        "scms-database",
         "scms-pages",
         "scms-theme",
         ""
@@ -77,9 +78,25 @@ if($_GET['phase'] == 1){
 
     }
     sleep(1);
+
+    try{
+
+        if(is_dir("../scms-database")){
+
+            $htaccess = file_get_contents('base-htaccess');
+
+            file_put_contents('../scms-database/.htaccess', $htaccess);
+            
+        }
+    }catch(Excecption $e){
+        exit($e);
+    }
+
+
     exit('IP1Ok');
 
 }elseif($_GET["phase"] == 2){
+    
     $create_folders = [
         "scms-admin/pages",
         "scms-admin",
@@ -87,6 +104,7 @@ if($_GET['phase'] == 1){
         "scms-content",
         "scms-core",
         "scms-modules",
+        "scms-database",
         "scms-pages",
         "scms-theme",
         ""
@@ -139,6 +157,8 @@ if($_GET['phase'] == 1){
     }
 
     rmdir('../installer');
+
+    unlink("../site-infos");
 
     exit('IP2Ok');
 }
