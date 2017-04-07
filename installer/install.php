@@ -13,6 +13,7 @@ if($_GET['phase'] == 1){
         "scms-core",
         "scms-modules",
         "scms-database",
+        "scms-database/db",        
         "scms-pages",
         "scms-theme",
         ""
@@ -104,6 +105,7 @@ if($_GET['phase'] == 1){
         "scms-content",
         "scms-core",
         "scms-modules",
+        "scms-database/db",        
         "scms-database",
         "scms-pages",
         "scms-theme",
