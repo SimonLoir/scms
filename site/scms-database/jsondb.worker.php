@@ -21,29 +21,35 @@ class jdb
             $table = $matchs[2];
             $options = $matchs[3];
 
+            $this->e = $e;
+
             $table_array = json_decode(file_get_contents("db/table-" . $table . ".json"));
 
             $array = [];
 
             if(strpos($options, " WHERE") === 0){
+
+                $table_column = json_decode(file_get_contents("db/tables.json"), true)[$table];
+                $this->cols = $table_column;
+                
                 preg_match('/^ WHERE (.[^ ]*) = (.*)$/', $options, $matchs);
                 if($matchs){
-                    $index = array_search( $matchs[1] , json_decode(file_get_contents("db/tables.json"), true)[$table]);
+                    $index = array_search( $matchs[1] , $table_column);
 
                     foreach ($table_array as $row) {
                         if($row[$index] == $matchs[2]){
-                            array_push($array, $row);
+                            array_push($array, $this->getArray($row));
                         }
                     }
                 }
 
                 preg_match('/^ WHERE (.[^ ]*) BETWEEN (.*) AND (.*)$/', $options, $matchs);
                 if($matchs){
-                    $index = array_search( $matchs[1] , json_decode(file_get_contents("db/tables.json"), true)[$table]);
+                    $index = array_search( $matchs[1] , $table_column);
 
                     foreach ($table_array as $row) {
                         if($row[$index] >= $matchs[2] && $row[$index] <= $matchs[3]){
-                            array_push($array, $row);
+                            array_push($array, $this->getArray($row));
                         }
                     }
                 }
@@ -60,6 +66,24 @@ class jdb
             
         }
 
+    }
+
+    private function getArray($row){
+        $x_row = [];
+
+        $requested = ($this->e == "*") ? $this->cols : array_map('trim', explode(',', $this->e)) ;
+
+        foreach ($this->cols as $col) {
+            
+            if(in_array(trim($col), $requested)){
+
+                $x_row[$col] = $row[array_search( $col , $this->cols )];
+                
+            }
+
+        }
+
+        return $x_row;
     }
 }
 
