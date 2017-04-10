@@ -57,9 +57,12 @@ body .scms-content-block{
     padding: 50px;
     background: white;
     & .scms-centred-element{
+        position: relative;
+        padding: auto;
         margin: auto;
         width: 100%;
         max-width:950px;
+        text-align:center;
         
         &.scms-compare-block{
             text-align: center;
@@ -137,6 +140,25 @@ body .scms-content-block{
     }
 }
 
+.scms-simple-action-button{
+    position: relative;
+    display: inline-block;
+    max-width: 300px;
+    background: darken(crimson, 3%);
+    color:white;
+    border: none;
+    border-radius: 5px;
+    padding: 12px;
+    padding-left: 25px;padding-right: 25px;
+    cursor: pointer;
+    transition: 1s;
+    margin:auto;
+    &:hover{
+        background: white;
+        color:darken(crimson, 3%);
+        border:1px solid darken(crimson, 3%);
+    }
+}
 
 .scms-admin-assistant{
     transition:0.75s;

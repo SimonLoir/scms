@@ -7,6 +7,10 @@ if(is_file('scms-pages/' . $page_global . ".json")){
 
 $p = json_decode($page, true);
 
+$db = new jdb();
+
+//var_dump($db->query('SELECT * FROM posts WHERE id = 99'));
+
 foreach ($p as $e) {
     if($e["type"] == "full-screen-landing-image"){
         if(isset($e["module"]) && $e["module"] == "core"){
@@ -169,6 +173,10 @@ function getHTMLFromModulesArray ($array) {
             }elseif($type == "big-action-button"){
 
                 $html .= "<button class=\"scms-big-action-button scms-to-bottom\">" . nl2br($e["text"]) . "</button>";
+
+            }elseif($type == "simple-action-button"){
+
+                $html .= "<button class=\"scms-simple-action-button\" data-scms-action-click=\"\">" . nl2br($e["text"]) . "</button>";
 
             }else{
                 exit("Unknown element used in site configuration" . $e["type"]);

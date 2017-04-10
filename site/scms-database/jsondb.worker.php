@@ -22,14 +22,14 @@ class jdb
             $options = $matchs[3];
 
             $this->e = $e;
-
-            $table_array = json_decode(file_get_contents("db/table-" . $table . ".json"));
+                       
+            $table_array = json_decode(file_get_contents(dirname(__FILE__) . "/db/table-" . $table . ".json"));
 
             $array = [];
 
             if(strpos($options, " WHERE") === 0){
 
-                $table_column = json_decode(file_get_contents("db/tables.json"), true)[$table];
+                $table_column = json_decode(file_get_contents(dirname(__FILE__) . "/db/tables.json"), true)[$table];
                 $this->cols = $table_column;
                 
                 preg_match('/^ WHERE (.[^ ]*) = (.*)$/', $options, $matchs);
@@ -62,8 +62,38 @@ class jdb
             }
 
             return $array;
-        }else{
-            
+        }elseif(strpos($statement, "INSERT INTO") === 0){
+            // Request type : INSERT
+            // Request code : $statement
+            try{
+                preg_match('/^INSERT INTO (.+) VALUES (.+)$/', $statement, $matchs);
+
+                $table = $matchs[1];
+                $values = $matchs[2];
+                
+                while(is_file(dirname(__FILE__) . "/db/table-used-" . $table)){
+
+                    sleep(1);
+
+                }
+
+                $table_array = json_decode(file_get_contents(dirname(__FILE__) . "/db/table-" . $table . ".json"));
+                
+                $to_add = json_decode($values);
+
+                array_push($table_array, $to_add);
+
+                if(file_put_contents(dirname(__FILE__) . "/db/table-" . $table . ".json", json_encode($table_array))){
+                    return true;
+                }else{
+                    throw new Exception("Bad filename or database is busy", 1);
+                }
+
+            }catch(Exception $e){
+                echo "<!-- Database error : impossible to insert values on database : database can be too busy or an error has occured : see this error message for more details : $e-->";
+                
+                return false;
+            }
         }
 
     }

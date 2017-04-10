@@ -3,11 +3,10 @@ include "jsondb.worker.php";
 
 $db = new jdb();
 
-$post = $db->query('SELECT id, content, title FROM posts WHERE id BETWEEN 9 AND 250');
-
-var_dump($post);
-
-
-
+if($db->query('INSERT INTO posts VALUES ' . json_encode(["", "test", "hihi"]))){
+    /**
+    * Il n'y a pas de problème, tout se passe comme prévu, l'exécution se passe sans problème et la reqsuête est effectuée sans aucune difficulté. C'est cool
+    */
+}
 
 ?>

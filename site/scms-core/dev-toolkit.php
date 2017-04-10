@@ -202,6 +202,14 @@ function getElementArray(element){
                 text: element.innerText
             }
         return x_result;
+    }else if(element.classList.contains("scms-simple-action-button")){
+            var x_result = {
+                type: "simple-action-button",
+                module: "core",
+                text: element.innerText, 
+                action : element.getAttribute("data-scms-action-click")
+            }
+        return x_result;
     }
 }
 
@@ -266,6 +274,12 @@ $('#scms-new-element').click(function () {
             x_window.remove();
         });
     
+    var btn_btn_action = x_window.child('button').html('Ajouter un bouton clickable');
+        btn_btn_action.click(function () {
+            to_add = "action-button";
+            x_window.remove();
+        });
+    
 });
 
 var to_add = "";
@@ -299,6 +313,17 @@ $('.scms-content-block, .scms-footer, .scms-compare-block').click(function () {
 
             $(e).child("p").html('Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam quibusdam et, fuga ullam, similique, aut fugit amet beatae iste iusto nulla. Architecto aliquid saepe cumque vitae reiciendis sequi repellendus obcaecati.').addClass('scms-content-block-paragraph');
             must_reload = true;
+            $('#scms-get-json').click();
+
+        }
+
+    }else if(to_add == "action-button"){
+
+        if(this.childNodes[0] != undefined && this.childNodes[0].classList.contains("scms-centred-element")){
+            var e = this.childNodes[0];
+            var button = $(e).child('button').addClass('scms-simple-action-button').html('Click here');
+            button.get(0).setAttribute('data-scms-action-click', "");
+             must_reload = true;
             $('#scms-get-json').click();
 
         }

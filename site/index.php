@@ -19,6 +19,7 @@
     </div>
     <div class="scms-content-container">
        <?php
+            include "scms-database/jsondb.worker.php";
             if(is_file("blocked")){include "scms-core/maintenance.php";}
             if (isset($_GET["p"])){$page_global = $_GET["p"];}else{$page_global = "home";}
             include "scms-core/pg-security.php";
