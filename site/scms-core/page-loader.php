@@ -176,7 +176,7 @@ function getHTMLFromModulesArray ($array) {
 
             }elseif($type == "simple-action-button"){
 
-                $html .= "<button class=\"scms-simple-action-button\" data-scms-action-click=\"\">" . nl2br($e["text"]) . "</button>";
+                $html .= "<button class=\"scms-simple-action-button\" data-scms-action-click=\"" . $e["action"] . "\">" . nl2br($e["text"]) . "</button>";
 
             }else{
                 exit("Unknown element used in site configuration" . $e["type"]);

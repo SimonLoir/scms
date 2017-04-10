@@ -4,7 +4,7 @@
     <div class="centred-content">
         <h1>Maintenance</h1>
 
-        <p>We are sorry but this website is unavailable for maintenance purpose. </p>
+        <p>We are sorry but this website is unavailable for maintenance purpose. Come back in a few hours.</p>
     </div>
 </div>
 
@@ -20,9 +20,6 @@
 }
 h1{
     margin-bottom: 50px;
-}
-.scms-header{
-    display:none;
 }
 
 .centred-content{

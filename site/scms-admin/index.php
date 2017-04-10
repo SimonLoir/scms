@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-if(!isset($_SESSION["scms-global-admin"])){
+if(!isset($_SESSION["scms-global-admin-" . sha1(realpath("../."))])){
     header('Location: login.php');
 }
 
@@ -25,7 +25,7 @@ $ic = true;
             <button><b style="font-size:20px;">menu</b></button>
             <a href="?p=home"><button id="home">Home</button></a>
             <a href="?p=pages"><button id="pages">Pages</button></a>
-            <a href="?p=admin-actions"><button id="admin-actions">Super admins</button></a>
+            <a href="logout.php"><button id="logout">Me déconnecter</button></a>
             
             <span>&copy; 2017 - Simon Loir</span>
         </div>

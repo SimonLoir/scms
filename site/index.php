@@ -10,6 +10,7 @@
     <?php include "scms-core/scripts.js.php"; ?>
 </head>
 <body>
+    <?php if(is_file("blocked")){include "scms-core/maintenance.php";} ?>
     <div class="scms-header">
         <img src="" alt="" class="scms-header-logo">
         <span class="scms-header-title">S CMS</span>

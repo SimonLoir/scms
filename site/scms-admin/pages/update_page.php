@@ -3,7 +3,7 @@ session_start();
 
 $json = urldecode($_POST["page_json"]);
 
-if(!isset($_SESSION["scms-global-admin"])){
+if(!isset($_SESSION["scms-global-admin-" . sha1(realpath("../../."))])){
     echo "Forbidden area";
 }
 

@@ -335,5 +335,34 @@ $('.scms-content-block, .scms-footer, .scms-compare-block').click(function () {
 });
 
 
+function scms_edit_action (element){
+
+    var action = element.getAttribute("data-scms-action-click");
+
+    var end_action = prompt("Action à effectuer : ", action);
+
+    if(end_action != null){
+
+        element.setAttribute("data-scms-action-click", end_action);
+
+    }
+
+    var edit_text = confirm("Voulez vous éditer le texte présent sur le bouton ?");
+
+    if(edit_text == true){
+
+        var bt = prompt("texte présent sur le bouton", element.innerText);
+
+        if(bt != null){
+
+            element.innerText = bt;
+
+        }
+
+    }
+
+}
+
+
 </script>
 <?php } ?>

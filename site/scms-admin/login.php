@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-if(isset($_SESSION["scms-global-admin"])){
+if(isset($_SESSION["scms-global-admin-" . sha1(realpath("../."))])){
     header('Location: index.php');
 }
 ?>
@@ -84,7 +84,7 @@ if(isset($_SESSION["scms-global-admin"])){
          
         if(password_verify($_POST["upsswd"], $user_password)){
             
-            $_SESSION["scms-global-admin"] = $user_name;
+            $_SESSION["scms-global-admin-" . sha1(realpath("../."))] = $user_name;
 
             header('Location: index.php');
 
