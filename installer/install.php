@@ -1,4 +1,8 @@
 <?php
+session_start();
+
+$_SESSION["first_use"] = "true";
+
 if($_GET['phase'] == 1){
 
     $user_infos = file_get_contents("../site-infos");

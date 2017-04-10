@@ -4,7 +4,7 @@
     <h2>Actions rapides</h2>
     <a href="?p=pages">Gérer les pages</a> | 
     <a href="?p=menu_links">Gérer les liens du menu</a>
-    <h2>Zone de danger</h2>
+    <h2>Désactiver l'accès au site</h2>
     <?php
     if(isset($_GET["maintenance"])){
         $s = $_GET["maintenance"];
@@ -20,4 +20,7 @@
     }
     ?>
     <?= (is_file("../blocked")) ? 'mode maintenance activé <a href="?p=home&maintenance=false"> Désactiver</a>' : 'mode maintenance désactivé <a href="?p=home&maintenance=true"> Activer</a>' ; ?>
+    <h2>Mises à jour et sécurité</h2>
+    <a href="?p=check_update">Mises à jour</a> | 
+    <a href="logout.php">Me déconnecter</a>
 <?php } ?>

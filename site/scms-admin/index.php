@@ -7,6 +7,7 @@ if(!isset($_SESSION["scms-global-admin-" . sha1(realpath("../."))])){
 
 $ic = true;
 ?>
+<?php header("Access-Control-Allow-Origin: *"); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -40,7 +41,7 @@ $ic = true;
             if(is_file("pages/" . $page .".php")){
                 include "pages/" . $page .".php";
             }else{
-                echo "La page que vous tentez d'atteindre est indisponible";
+                echo "La page que vous tentez d'atteindre est indisponible. Erreur 404, page introuvable !";
             }
 
             ?>
