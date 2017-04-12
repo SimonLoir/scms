@@ -2,6 +2,9 @@
     "contact-form" : {
         "gen-code" : "contact-form-builder.php",
         "get-code" : "contact-form-getter.json",
-        "css-file" : "contact-form-styles.css"
+        "css-file" : "contact-form-styles.css",
+        "htm-code" : "contact-from-html-code.html",
+        "class" : "scms-contact-form-block",
+        "isBlock" : true
     }
 }

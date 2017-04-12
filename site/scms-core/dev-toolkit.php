@@ -9,6 +9,61 @@
     </button>
 </div>
 
+<?php
+/*  ---------------------------------------------------------------------------  */
+/*  ----------       Getting data about modules and extensions       ----------  */
+/*  ---------------------------------------------------------------------------  */
+
+$modules = [];
+
+foreach (scandir("scms-modules") as $thing) {
+    
+    $relative_path = 'scms-modules/' . $thing;
+
+    if($thing != "." && $thing != ".." && is_dir($relative_path)){
+
+        $map = $relative_path . "/map.json";
+
+        if(is_file($map)){   
+
+            $module_array = json_decode(file_get_contents($map), true);
+            
+            $keys = array_keys($module_array);
+
+            foreach ($keys as $key) {
+                
+                $extension = $module_array[$key];
+            
+                $module = [
+                    "isBlock" => $extension["isBlock"],
+                    "catch_class" => $extension["class"]
+                ];
+            
+                array_push($modules, $module);
+
+            }
+
+        }
+
+    }
+
+}
+
+?>
+<script data-core-no-index>
+    
+    var modules = '<?= json_encode($modules) ?>';
+        modules = JSON.parse(modules);
+        console.log(modules);
+
+</script>
+<?php
+
+
+/*  ---------------------------------------------------------------------------  */
+?>
+
+
 <script data-core-no-index>
 var els = document.querySelectorAll("h1, h2, h3, h4, h5, h6, span, p, button");
 
@@ -366,6 +421,8 @@ $('.scms-content-block, .scms-footer, .scms-compare-block, .scms-landing-image')
         }
 
     }
+
+
 
     to_add = "";
 
