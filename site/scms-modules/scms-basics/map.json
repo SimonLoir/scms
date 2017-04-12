@@ -1,0 +1,7 @@
+{
+    "contact-form" : {
+        "gen-code" : "contact-form-builder.php",
+        "get-code" : "contact-form-getter.json",
+        "css-file" : "contact-form-styles.css"
+    }
+}

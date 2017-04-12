@@ -1,7 +1,9 @@
 <?php
 if(isset($_GET["dev_mod"]) && $_GET["dev_mod"] == "true" && !isset($_SESSION["scms-global-admin-" . sha1(realpath("."))])){
+    
     header('Location: scms-admin');
 }elseif(isset($_GET["dev_mod"]) && $_GET["dev_mod"] == "true" && isset($_SESSION["scms-global-admin-" . sha1(realpath("."))])){
+    $dev_mod = true;
 ?>
 <script data-core-no-index>
 $(document).ready(function () {
@@ -12,6 +14,7 @@ $(document).ready(function () {
 </script>
 <?php
 }else{
+    $dev_mod = false;
 ?>
 <script data-core-no-index>
 $(document).ready(function () {
