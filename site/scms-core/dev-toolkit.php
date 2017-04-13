@@ -35,9 +35,11 @@ foreach (scandir("scms-modules") as $thing) {
                 $extension = $module_array[$key];
             
                 $module = [
-                    "isBlock" => $extension["isBlock"],
+                    "is_block" => $extension["isBlock"],
                     "catch_class" => $extension["class"],
-                    "display_name" => $extension["disp-name"]
+                    "display_name" => $extension["disp-name"],
+                    "js_code_builder" => file_get_contents($relative_path . "/" . $extension["htm-code"]),
+                    "getter_code" => file_get_contents($relative_path . "/" . $extension["get-code"])
                 ];
             
                 array_push($modules, $module);
@@ -50,13 +52,20 @@ foreach (scandir("scms-modules") as $thing) {
 
 }
 
+$block_can_delete = "";
+
+foreach ($modules as $mod) {
+    
+    if($mod["is_block"]){
+        $block_can_delete .= ", ." . $mod["catch_class"];
+    }
+
+}
+
 ?>
 <script data-core-no-index>
-    
-    var modules = '<?= json_encode($modules) ?>';
-        modules = JSON.parse(modules);
+    var modules = <?= json_encode($modules) ?>;
         console.log(modules);
-
 </script>
 <?php
 
@@ -75,7 +84,7 @@ for (var i = 0; i < els.length; i++) {
 
 var must_reload = false;
 
-var btns_delete = $('.scms-content-block, .scms-landing-image').child('button').html('Supprimer cet élément');
+var btns_delete = $('.scms-content-block, .scms-landing-image<?= $block_can_delete ?>').child('button').html('Supprimer cet élément');
 
     btns_delete.addClass('scms-editor-delete-element');
 
@@ -282,6 +291,15 @@ function getElementArray(element){
                 action : element.getAttribute("data-scms-action-click")
             }
         return x_result;
+    }else{
+ 
+        for (var i = 0; i < modules.length; i++) {
+            var elm = modules[i];
+            if(element.classList.contains(elm.catch_class)){
+                return eval(elm.getter_code);
+            }
+        }
+
     }
 }
 
@@ -373,7 +391,7 @@ $('#scms-new-element').click(function () {
 
 var to_add = "";
 
-$('.scms-content-block, .scms-footer, .scms-compare-block, .scms-landing-image').click(function () {
+$('.scms-content-block, .scms-footer, .scms-compare-block, .scms-landing-image<?= $block_can_delete ?>').click(function () {
     
     if(to_add == "cblock"){
 
@@ -438,8 +456,7 @@ $('.scms-content-block, .scms-footer, .scms-compare-block, .scms-landing-image')
         var id = to_add.replace('scms-extension-', "");
 
         var mod = modules[id];
-        console.log(id)
-        console.log(mod);
+        eval(mod["js_code_builder"]);
 
     }
 

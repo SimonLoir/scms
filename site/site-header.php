@@ -1,1 +1,1 @@
-<a href="?p=home" class="scms-header-actions-link">Home</a><a href="?p=extensions" class="scms-header-actions-link">Créer des extensions</a><a href="?p=scms-extensions-language" class="scms-header-actions-link">Langage des extensions</a>
+<a href="?p=home" class="scms-header-actions-link">Home</a><a href="?p=contact" class="scms-header-actions-link">Contact</a>

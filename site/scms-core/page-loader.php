@@ -9,8 +9,6 @@ $p = json_decode($page, true);
 
 $db = new jdb();
 
-//var_dump($db->query('SELECT * FROM posts WHERE id = 99'));
-
 foreach ($p as $e) {
     if($e["type"] == "full-screen-landing-image"){
         if(isset($e["module"]) && $e["module"] == "core"){
@@ -114,6 +112,28 @@ foreach ($p as $e) {
 
         }
     }elseif(isset($e["module"]) && $e["module"] != "core"){
+        
+        $dir = "scms-modules/" . $e["module"];
+
+        if(is_dir($dir)){
+
+            $map = $dir . "/map.json";
+
+            $x_map = json_decode(file_get_contents($map), true);
+
+            foreach ($x_map as $extension) {
+                if($extension["class"] == $e["type"]){
+                    include $dir."/".$extension["gen-code"];
+                }else{
+                    echo "<!--code-error-->";
+                }
+            }
+
+            
+
+        }else{
+            echo '<div class="scms-content-block" data-core-no-index><div class="scms-centred-element">Erreur de construction de site : le module '. $e["module"] . ' est introuvable. </div></div>';
+        }
         
     }elseif($e["type"] == "page-infos"){
             
