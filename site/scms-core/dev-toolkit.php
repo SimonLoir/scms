@@ -36,7 +36,8 @@ foreach (scandir("scms-modules") as $thing) {
             
                 $module = [
                     "isBlock" => $extension["isBlock"],
-                    "catch_class" => $extension["class"]
+                    "catch_class" => $extension["class"],
+                    "display_name" => $extension["disp-name"]
                 ];
             
                 array_push($modules, $module);
@@ -356,6 +357,18 @@ $('#scms-new-element').click(function () {
             to_add = "landing-image";
             x_window.remove();
         });
+
+    for (var i = 0; i < modules.length; i++) {
+        var element = modules[i];
+
+        var btn_extension = x_window.child('button').html(element.display_name);
+            btn_extension.get(0).setAttribute("data-x-id", i);
+        btn_extension.click(function () {
+            to_add = "scms-extension-" + this.getAttribute("data-x-id");
+            x_window.remove();
+        });
+
+    }
 });
 
 var to_add = "";
@@ -419,6 +432,14 @@ $('.scms-content-block, .scms-footer, .scms-compare-block, .scms-landing-image')
             $('#scms-get-json').click();
 
         }
+
+    }else if(to_add.indexOf('scms-extension-') == 0){
+
+        var id = to_add.replace('scms-extension-', "");
+
+        var mod = modules[id];
+        console.log(id)
+        console.log(mod);
 
     }
 

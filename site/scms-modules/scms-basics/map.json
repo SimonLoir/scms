@@ -5,6 +5,7 @@
         "css-file" : "contact-form-styles.css",
         "htm-code" : "contact-from-html-code.html",
         "class" : "scms-contact-form-block",
+        "disp-name" : "Formulaire de contact",
         "isBlock" : true
     }
 }
