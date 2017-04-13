@@ -1,11 +1,11 @@
 {
-    "contact-form" : {
-        "gen-code" : "contact-form-builder.php",
-        "get-code" : "contact-form-getter.js",
-        "css-file" : "contact-form-styles.css",
-        "htm-code" : "contact-from-html-code.js",
-        "class" : "scms-contact-form-block",
-        "disp-name" : "Formulaire de contact",
-        "isBlock" : true
-    }
+"contact-form" : {
+"gen-code" : "contact-form-builder.php",
+"get-code" : "contact-form-getter.js",
+"css-file" : "contact-form-styles.css",
+"htm-code" : "contact-from-html-code.js",
+"class" : "scms-contact-form-block",
+"disp-name" : "Formulaire de contact",
+"isBlock" : true
+}
 }
