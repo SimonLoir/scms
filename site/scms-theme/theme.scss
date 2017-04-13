@@ -157,7 +157,7 @@ body .scms-content-block{
     padding-left: 25px;padding-right: 25px;
     cursor: pointer;
     transition: 1s;
-    margin:auto;
+    margin:auto 15px;
     &:hover{
         background: white;
         color:darken(crimson, 3%);
