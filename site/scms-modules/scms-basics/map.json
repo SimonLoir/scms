@@ -1,11 +1,18 @@
 {
-"contact-form" : {
-"gen-code" : "contact-form-builder.php",
-"get-code" : "contact-form-getter.js",
-"css-file" : "contact-form-styles.css",
-"htm-code" : "contact-from-html-code.js",
-"class" : "scms-contact-form-block",
-"disp-name" : "Formulaire de contact",
-"isBlock" : true
-}
+    "contact-form": {
+        "gen-code": "contact-form-builder.php",
+        "get-code": "contact-form-getter.js",
+        "htm-code": "contact-from-html-code.js",
+        "class": "scms-contact-form-block",
+        "disp-name": "Formulaire de contact",
+        "isBlock": true
+    }
+    ,"404-full-screen": {
+        "gen-code": "404-builder.php",
+        "get-code": "404-getter.js",
+        "htm-code": "404-html-code.js",
+        "class": "scms-basics-404-image",
+        "disp-name": "Block 404 pour page 404",
+        "isBlock": true
+    }
 }
