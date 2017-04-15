@@ -1,0 +1,10 @@
+{
+    "contact-form": {
+        "gen-code": "share-builder.php",
+        "get-code": "share-getter.js",
+        "htm-code": "share-html-code.js",
+        "class": "scms-share-icons-div",
+        "disp-name": "Icones de partage sur les réseaux sociaux",
+        "isBlock": true
+    }
+}
