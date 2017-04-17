@@ -17,6 +17,9 @@ if($_GET['phase'] == 1){
         "scms-core",
         "scms-modules",
         "scms-modules/scms-basics",
+        "scms-modules/scms-social-medias",
+        "scms-modules/scms-social-medias/share_icons",        
+        "scms-code-editor",
         "scms-database",
         "scms-database/db",        
         "scms-pages",
@@ -109,12 +112,15 @@ if($_GET['phase'] == 1){
         "scms-content/images",
         "scms-content",
         "scms-core",
+        "scms-modules/scms-social-medias/share_icons",        
+        "scms-modules/scms-social-medias",
         "scms-modules/scms-basics",
         "scms-modules",
         "scms-database/db",        
         "scms-database",
         "scms-pages",
         "scms-theme",
+        "scms-code-editor",
         ""
     ];
 

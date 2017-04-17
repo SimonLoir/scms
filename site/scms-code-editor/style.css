@@ -1,0 +1,27 @@
+.header{
+    position:fixed;
+    top: 0;right: 0;left: 0;
+    height: 35px;
+    background:linear-gradient(rgb(51, 51, 51), rgb(52, 52, 52));
+}
+
+.code-editor{
+    background: transparent;
+    position:fixed;
+    top: 35px;left: 0;right: 0;bottom: 0;
+    padding: 25px;
+    font-family: sans-serif;
+    color:rgba(255,255,255,0.05);
+}
+.code-editor-colors{
+    position:fixed;
+    top: 35px;left: 0;right: 0;bottom: 0;
+    padding: 25px;
+    font-family: sans-serif;
+    background:rgb(30,30,30);
+    color:white;    
+}
+
+.html-el{
+    color:rgb(71,140, 181);
+}
