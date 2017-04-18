@@ -23,7 +23,15 @@
         e.oninput = function () {
             var text = e.innerText;
 
-            text = text.replace(/<(.[^>]*)/g, "&lt;<span class='html-el'>$1</span>");           
+            text = text.replace(/<(.[^>]*)/g, function (m, p1){
+                //We can add some verification process to see if the element is inside a script (PHP or js)
+                return "&lt;<span class='html-el'>" + p1 + "</span>";
+            });
+
+            text = text.replace(/(.[^ ]*)\((.*)\)/g, function (m, p1, p2){
+                //We can add some verification process to see if the element is inside a script (PHP or js)
+                return "<span class='js-function'>" + p1 + "</span>(" + p2 + ")";
+            });           
 
             text = text.replace(/(\n|\r)/g, "<br />");
             text = text.replace(/(\r\n)/g, "<br />");
