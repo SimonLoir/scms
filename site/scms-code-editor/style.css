@@ -11,7 +11,7 @@
     top: 35px;left: 0;right: 0;bottom: 0;
     padding: 25px;
     font-family: sans-serif;
-    color:rgba(255,255,255,0.05);
+    color:rgba(255,255,255,0.05);overflow:auto;
 }
 .code-editor-colors{
     position:fixed;
@@ -19,13 +19,33 @@
     padding: 25px;
     font-family: sans-serif;
     background:rgb(30,30,30);
-    color:white;    
+    color:white; overflow:auto;   
 }
 
 .html-el{
     color:rgb(71,140, 181);
 }
+.php-el{
+    color:rgb(71,140, 181);
+    /*color:red;*/
+}
 
 .js-function {
     color:yellowgreen;
+}
+
+.html-attribute {
+    color:lightblue;
+}
+
+.no-color{
+    color:white;
+}
+
+.string-color{
+    color:rgb(208,166,65);
+}
+
+.php-function{
+    color:rgb(208,166,65);
 }
