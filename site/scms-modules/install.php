@@ -35,6 +35,16 @@ if(isset($_SESSION["scms-global-admin-" . sha1(realpath("../."))])){
 
                 $file_name = str_replace("@file~write ", "", $x);
 
+            }else if(strpos($x , "@require version ") === 0){
+
+                include "../scms-version.php";
+
+                $v = str_replace("@require version ", "", $x);
+
+                if($v != $version){
+                    exit('Version error');
+                }
+
             }else if(strpos($x , "@file~close ") === 0){
 
                 $filexxx = str_replace("@file~close ", "", $x);
