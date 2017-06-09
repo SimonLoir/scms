@@ -1,0 +1,26 @@
+{
+"contact-form": {
+"gen-code": "contact-form-builder.php",
+"get-code": "contact-form-getter.js",
+"htm-code": "contact-from-html-code.js",
+"class": "scms-contact-form-block",
+"disp-name": "Formulaire de contact",
+"isBlock": true
+},
+"404-full-screen": {
+"gen-code": "404-builder.php",
+"get-code": "404-getter.js",
+"htm-code": "404-html-code.js",
+"class": "scms-basics-404-image",
+"disp-name": "Block 404 pour page 404",
+"isBlock": true
+},
+"iframe": {
+"gen-code": "iframe-builder.php",
+"get-code": "iframe-getter.js",
+"htm-code": "iframe-html-code.js",
+"class": "scms-basics-iframe",
+"disp-name": "Cadre pour intégrer un site web dans votre site",
+"isBlock": true
+}
+}

@@ -1,0 +1,11 @@
+{
+"comment-form": {
+"gen-code": "comment-form-builder.php",
+"get-code": "comment-form-getter.js",
+"htm-code": "comment-from-html-code.js",
+"class": "scms-comment-form-block",
+"disp-name": "Zone de commentaires",
+"isBlock": true
+}
+}
+

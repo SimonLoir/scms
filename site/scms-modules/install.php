@@ -1,12 +1,39 @@
 <?php
 session_start();
 if(isset($_SESSION["scms-global-admin-" . sha1(realpath("../."))])){
-
+    
     if(isset($_GET["mi"])){
 
-        $mod = $_GET["mi"];
+        $e = $_GET["mi"];
 
-        $file = file_get_contents($_GET["mi"] . ".config");
+       $f = explode("|", $e);
+
+       foreach ($f as $ff) {
+           install($ff);
+       }
+
+    }else{
+        $files = scandir('.');
+
+        foreach ($files as $file) {
+            if(explode(".", $file)[sizeof(explode(".", $file)) - 1] == "config"){
+                try{
+                    install(str_replace('.config', "", $file));
+                }catch (Exception $e){
+                    
+                }
+            }
+
+        }
+    }
+
+}else{
+    echo ":error:";
+}
+
+function install ($mod){
+
+        $file = file_get_contents($mod . ".config");
 
         $file = explode("\n", $file);
 
@@ -14,7 +41,8 @@ if(isset($_SESSION["scms-global-admin-" . sha1(realpath("../."))])){
         $file_name = "";
 
         if(trim($file[0]) != "@doctype installation-config-file"){
-            exit("Installation media - error");
+            echo("Installation media - error");
+            return;
         }
 
         for ($i=0; $i < sizeOf($file); $i++) { 
@@ -28,7 +56,8 @@ if(isset($_SESSION["scms-global-admin-" . sha1(realpath("../."))])){
                 if(!is_dir($folder_name)){
                     mkdir($folder_name);
                 }else{
-                    exit("Config_error -> config file :: folder");
+                    echo("Config_error -> config file :: folder");
+                    return;
                 }
 
             }else if(strpos($x , "@file~write ") === 0){
@@ -42,7 +71,8 @@ if(isset($_SESSION["scms-global-admin-" . sha1(realpath("../."))])){
                 $v = str_replace("@require version ", "", $x);
 
                 if($v != $version){
-                    exit('Version error');
+                    echo('Version error');
+                    return;
                 }
 
             }else if(strpos($x , "@file~close ") === 0){
@@ -51,7 +81,8 @@ if(isset($_SESSION["scms-global-admin-" . sha1(realpath("../."))])){
 
 
                 if($filexxx != $file_name){
-                    exit('Config error');
+                    echo('Config error');
+                    return;
                 }
 
                 file_put_contents($filexxx, $wrapper);
@@ -63,10 +94,5 @@ if(isset($_SESSION["scms-global-admin-" . sha1(realpath("../."))])){
             }
 
         }
-
-    }
-
-}else{
-    echo ":error:";
 }
 ?>
