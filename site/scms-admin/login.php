@@ -85,9 +85,12 @@ if(isset($_SESSION["scms-global-admin-" . sha1(realpath("../."))])){
         if(password_verify($_POST["upsswd"], $user_password)){
             
             $_SESSION["scms-global-admin-" . sha1(realpath("../."))] = $user_name;
-
+            if(isset($_SESSION["first_use"])){
+                header('Location: ../scms-modules/install.php?redir=../scms-admin/?p=home');
+                exit("");
+            }
             header('Location: index.php');
-
+            exit('');
         }else{
             $result = "Bad password<br /><br />";
         }

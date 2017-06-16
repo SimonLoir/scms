@@ -22,5 +22,14 @@
 "class": "scms-basics-iframe",
 "disp-name": "Cadre pour intégrer un site web dans votre site",
 "isBlock": true
+},
+"simple-image": {
+"gen-code": "simple-image-builder.php",
+"get-code": "simple-image-getter.js",
+"htm-code": "simple-image-html-code.js",
+"class": "scms-simple-image",
+"disp-name": "Simple image",
+"isBlock": true
 }
 }
+

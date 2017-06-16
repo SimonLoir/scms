@@ -41,15 +41,20 @@ if($_GET['phase'] == 1){
                 $file_content = file_get_contents("../site/". $folder . "/" . $file);
 
                 if($file == "user-credentials.php"){
+
                     $file_content = str_replace("root", $user_infos->user_email, $file_content);
                     
                     $file_content = str_replace("{password}", $user_infos->user_password, $file_content);
+                    
                 }
 
                 $file_content = str_replace("S CMS", $user_infos->website_name, $file_content);
 
                 
-                $file_content = str_replace("Simon Loir", $user_infos->user_name, $file_content);         
+                $file_content = str_replace("Simon Loir", $user_infos->user_name, $file_content);  
+                       
+                $file_content = str_replace("fake-email@fake-fake.fakeland", $user_infos->user_email , $file_content);  
+
 
                 if(!file_put_contents($directory  . "/" . $file, $file_content)){
                     exit('Fatal error' . $file);

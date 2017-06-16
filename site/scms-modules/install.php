@@ -1,5 +1,6 @@
 <?php
 session_start();
+var_dump($_SESSION);
 if(isset($_SESSION["scms-global-admin-" . sha1(realpath("../."))])){
     
     if(isset($_GET["mi"])){
@@ -25,6 +26,11 @@ if(isset($_SESSION["scms-global-admin-" . sha1(realpath("../."))])){
             }
 
         }
+    }
+
+    if(isset($_GET["redir"])){
+        header('Location: ' . $_GET["redir"]);
+        exit('');
     }
 
 }else{

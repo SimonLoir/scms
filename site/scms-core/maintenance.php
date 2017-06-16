@@ -4,7 +4,7 @@
     <div class="centred-content">
         <h1>Maintenance</h1>
 
-        <p>We are sorry but this website is unavailable for maintenance purpose. Come back in a few hours.</p>
+        <p>We are sorry but this website is unavailable for maintenance purpose. Come back in a few hours.<br />Nous sommes désolés mais ce site web est indisponible pour maintenance. Revenez dans quelques heures. <br />Admin email : fake-email@fake-fake.fakeland</p>
     </div>
 </div>
 

@@ -33,7 +33,7 @@ foreach ($p as $e) {
                 $h = "450px";
             }
 
-            echo '<div class="scms-landing-image" style="height:' . $h . ';background:url(' . $e["resource-img-src"] .') no-repeat;background-position:center;background-size:cover;position:relative;"><span style="color:white;font-size:50px;position:absolute;top:50%;left:50%;transform: translateX(-50%) translateY(-50%);text-shadow:0px 0px 8px rgba(0,0,0,0.45);">' . $text . '</span></div>';
+            echo '<div class="scms-landing-image" style="height:' . $h . ';background:url(' . $e["resource-img-src"] .') no-repeat;background-position:center;background-size:cover;position:relative;"><span style="color:white;font-size:50px;position:absolute;top:50%;left:50%;transform: translateX(-50%) translateY(-50%);text-shadow:0px 0px 8px rgba(0,0,0,0.45);text-align:center;">' . $text . '</span></div>';
         }
     }elseif($e["type"] == "footer-element"){
         if(isset($e["module"]) && $e["module"] == "core"){

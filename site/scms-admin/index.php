@@ -3,8 +3,8 @@ session_start();
 
 if(!isset($_SESSION["scms-global-admin-" . sha1(realpath("../."))])){
     header('Location: login.php');
+    exit('');
 }
-
 $ic = true;
 ?>
 <?php header("Access-Control-Allow-Origin: *"); ?>
@@ -26,6 +26,8 @@ $ic = true;
             <button><b style="font-size:20px;">menu</b></button>
             <a href="?p=home"><button id="home">Home</button></a>
             <a href="?p=pages"><button id="pages">Pages</button></a>
+            <a href="?p=store"><button id="store">Store</button></a>
+            <a href="?p=menu_links"><button id="menu_links">Menu</button></a>
             <a href="logout.php"><button id="logout">Me déconnecter</button></a>
             
             <span>&copy; 2017 - Simon Loir</span>

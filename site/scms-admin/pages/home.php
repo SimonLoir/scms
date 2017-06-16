@@ -23,4 +23,7 @@
     <h2>Mises à jour et sécurité</h2>
     <a href="?p=check_update">Mises à jour</a> | 
     <a href="logout.php">Me déconnecter</a>
+    <h2>Applications et mises à jour</h2>
+    <a href="?p=store_check_update">Mises à jour des applications</a> | 
+    <a href="?p=store">Installer des applications</a>
 <?php } ?>

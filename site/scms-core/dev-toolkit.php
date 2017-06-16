@@ -298,8 +298,10 @@ function getElementArray(element){
             if(element.classList.contains(elm.catch_class)){
                 return eval(elm.getter_code);
             }
+           
         }
-
+        alert('Not found')
+         return {};
     }
 }
 
@@ -456,6 +458,7 @@ $('.scms-content-block, .scms-footer, .scms-compare-block, .scms-landing-image<?
         var id = to_add.replace('scms-extension-', "");
 
         var mod = modules[id];
+        var element = this;
         eval(mod["js_code_builder"]);
 
     }

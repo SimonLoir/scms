@@ -144,12 +144,9 @@ if(isset($_GET['force_progress'])){
 
                 <p> <label for="Name">Nom du site (titre): <input type="text" name="name" value="<?= $name ?>"></label></p>
 
-                <p> <label for="Name">Type de site: <select name="site-type">
-                    <option value="all">Pas encore décidé</option>
-                    <option value="blog">Blog</option>
-                    <option value="portfolio">Portfolio</option>
-                    <option value="ecommerce">E-commerce</option>
-                    <option value="vitrine">Site vitrine</option>
+                <p> <label for="Name">Que devons nous installer: <select name="site-type">
+                    <option value="all">Toutes options possibles</option>
+                    <option value="choose-what-I-want">Choisir ce que je veux installer</option>
                 </select> </label></p>
                 
                 
