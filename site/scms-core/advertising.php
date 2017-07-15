@@ -4,9 +4,6 @@ if(is_file('show_pub')){
 <div class="scms-advertising made-with" data-core-no-index>
     Made with SCMS free version, make your own website now !
 </div>
-<?php
-}
-?>
 
 <style data-core-no-index>
 .scms-advertising{
@@ -32,7 +29,37 @@ if(is_file('show_pub')){
     font-size: 14px;
 }
 </style>
+
 <script data-core-no-index>
 $('.made-with').click(function () {window.location.href = "http://simonloir.be/s";});
+
+$(document).ready(function ( ) {
+    var adBlock = false;
+    var testAd = document.createElement('div');
+        testAd.innerHTML = "&nbsp;";
+        testAd.className = "adsbox";
+    document.body.appendChild(testAd);
+    setTimeout(function() {
+        if(testAd.offsetHeight === 0){
+            adBlock = true;
+            
+            $('.scms-content-container').html("").child('div').addClass('scms-content-block').html(
+                
+                 '<h2>Un bloqueur de pub est activé, désactivez le pour accèder au contenu</h2>' +
+
+                'SCMS est gratuit et pour que ce CMS reste gratuit, nous utilisons la publicité sur les sites créés avec SCMS. En désactivant votre bloqueur de pub, vous aidez le développement de SCMS.'
+                
+            );
+         }
+        testAd.remove();
+        
+    }, 500);
+});
+
 </script>
+
+<?php
+}
+?>
+
 

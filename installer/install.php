@@ -11,6 +11,7 @@ if($_GET['phase'] == 1){
     
     $create_folders = [
         "scms-admin",
+        "scms-terminal",
         "scms-admin/pages",
         "scms-content",
         "scms-content/images",
@@ -120,6 +121,7 @@ if($_GET['phase'] == 1){
         "scms-pages",
         "scms-theme",
         "scms-code-editor",
+        "scms-terminal",        
         ""
     ];
 

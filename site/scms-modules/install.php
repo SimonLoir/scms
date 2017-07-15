@@ -1,6 +1,6 @@
 <?php
 session_start();
-var_dump($_SESSION);
+//var_dump($_SESSION);
 if(isset($_SESSION["scms-global-admin-" . sha1(realpath("../."))])){
     
     if(isset($_GET["mi"])){
@@ -47,7 +47,7 @@ function install ($mod){
         $file_name = "";
 
         if(trim($file[0]) != "@doctype installation-config-file"){
-            echo("Installation media - error");
+            echo("\n" . "Installation media - error");
             return;
         }
 
@@ -62,7 +62,7 @@ function install ($mod){
                 if(!is_dir($folder_name)){
                     mkdir($folder_name);
                 }else{
-                    echo("Config_error -> config file :: folder");
+                    echo("\n" . "Config_error -> config file :: folder");
                     return;
                 }
 
@@ -71,13 +71,15 @@ function install ($mod){
                 $file_name = str_replace("@file~write ", "", $x);
 
             }else if(strpos($x , "@require version ") === 0){
+                
+                echo "\n";
 
                 include "../scms-version.php";
 
                 $v = str_replace("@require version ", "", $x);
 
                 if($v != $version){
-                    echo('Version error');
+                    echo("\n" . 'Version error');
                     return;
                 }
 
@@ -87,7 +89,7 @@ function install ($mod){
 
 
                 if($filexxx != $file_name){
-                    echo('Config error');
+                    echo("\n" . 'Config error');
                     return;
                 }
 
@@ -100,5 +102,7 @@ function install ($mod){
             }
 
         }
+
+        echo "\n Done :: $mod \n";
 }
 ?>
