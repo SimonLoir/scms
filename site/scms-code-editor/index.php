@@ -1,3 +1,10 @@
+<?php
+session_start();
+
+if(!isset($_SESSION["scms-global-admin-" . sha1(realpath("../."))])){
+    header('Location: ../login.php');
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -74,6 +81,9 @@
         function code_php(code){
             code = code.replace(/function (.*)\((.*)\)/gm, function (m, p1, p2) {
                 return span + ' class="php-el">function' + span_end + "> " + span + ' class="php-function">' + p1 + span_end + ">(" + p2 + ")";
+            });
+            code = code.replace(/\$(.[^ ]*)/gm, function (m, p1) {
+                return span + ' class="php-el">$' + p1 + span_end + ">";
             });
             return code;
         }

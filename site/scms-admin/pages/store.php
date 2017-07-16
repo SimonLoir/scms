@@ -2,7 +2,11 @@
 
 <h1>SCMS store</h1>
 
-<h2 id="trends">Applications à la une :</h2>
+<?php $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]"; ?>
+
+version de SCMS : <?php include "../scms-version.php"; ?>
+
+<a href="https://simonloir.be/app-store/index.php?server=<?= explode('?', $actual_link)[0] ?>&version=<?= $version ?>">Accèder au store en ligne</a>
 
 <h2 id="installed">Applications installées : </h2>
 

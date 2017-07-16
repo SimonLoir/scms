@@ -28,6 +28,7 @@ $ic = true;
             <a href="?p=pages"><button id="pages">Pages</button></a>
             <a href="?p=store"><button id="store">Store</button></a>
             <a href="?p=menu_links"><button id="menu_links">Menu</button></a>
+            <a href="../scms-terminal"><button id="menu_links">Terminal (admin)</button></a>
             <a href="logout.php"><button id="logout">Me déconnecter</button></a>
             
             <span>&copy; 2017 - Simon Loir</span>
