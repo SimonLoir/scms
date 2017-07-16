@@ -11,7 +11,7 @@ echo '</span> version disponible sur le serveur : <span class="online_version">-
 ?>
 
 <div class="update_button_receiver">
-    <br>
+    <br>Si vous décidez d'installer une nouvelle version du programme, certains modules devront être mis à jour
 
 </div>
 

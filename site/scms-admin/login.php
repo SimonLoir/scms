@@ -71,29 +71,37 @@ if(isset($_SESSION["scms-global-admin-" . sha1(realpath("../."))])){
 </head>
 <body>
     <?php
+    date_default_timezone_set('Europe/Brussels');
     $result = "";
 
     include "user-credentials.php";
 
+    $date = new DateTime();
+
+
     if(isset($_POST["send"])){
+
+        $result = false;
 
         if($_POST["uname"] != $user_name){
             $result = "Bad username<br /><br />";
         }
 
          
-        if(password_verify($_POST["upsswd"], $user_password)){
+        if(password_verify($_POST["upsswd"], $user_password) && !$result){
             
             $_SESSION["scms-global-admin-" . sha1(realpath("../."))] = $user_name;
             if(isset($_SESSION["first_use"])){
                 header('Location: ../scms-modules/install.php?redir=../scms-admin/?p=home');
                 exit("");
             }
+            file_put_contents("login.log", file_get_contents('login.log') . "\n Connexion réussie par " . $_SERVER["REMOTE_ADDR"] . " le " . $date->format('Y-m-d H:i:s') );
             header('Location: index.php');
             exit('');
         }else{
             $result = "Bad password<br /><br />";
-        }
+         }
+        file_put_contents("login.log", file_get_contents('login.log') . "\n Echec de la connexion. Tentative de connexion par " . $_SERVER["REMOTE_ADDR"] . " le " . $date->format('Y-m-d H:i:s') );
 
     }
 

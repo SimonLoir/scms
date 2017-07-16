@@ -1,5 +1,5 @@
 <?php
-
+/*
     session_start();
 
     include "../scms-admin/user-credentials.php";
@@ -19,5 +19,5 @@
     $_SESSION["scms-global-admin-" . sha1(realpath("../."))] = $_POST["user"];
 
     exit('ok');
-
+*/
 ?>
