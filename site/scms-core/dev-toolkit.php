@@ -118,6 +118,7 @@ var update_image = $('.scms-landing-image').child('button').html('Modifier l\'im
                 var cancel_button = x_window.child('button').html("annuler").click(function () {
                     x_window.remove();
                 });
+                cancel_button.addClass('exit-button');
                 x_window.child('br');
                 try {
                     data = JSON.parse(data);
@@ -347,6 +348,7 @@ $('#scms-new-element').click(function () {
         exit.click(function () {
             x_window.remove();
         });
+        exit.addClass('exit-button');
 
     var btn_cblock = x_window.child('button').html('Ajouter un block de contenu');
         btn_cblock.click(function () {

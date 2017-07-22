@@ -37,7 +37,20 @@ if(isset($_SESSION["scms-global-admin-" . sha1(realpath("../."))])){
     echo ":error:";
 }
 
+function delTree($dir)
+{ 
+    $files = array_diff(scandir($dir), array('.', '..')); 
+    foreach ($files as $file) { 
+        (is_dir("$dir/$file")) ? delTree("$dir/$file") : unlink("$dir/$file"); 
+    }
+    return rmdir($dir); 
+} 
+
 function install ($mod){
+
+        if(is_dir($mod)){
+            delTree($mod);
+        }
 
         $file = file_get_contents($mod . ".config");
 
@@ -104,5 +117,6 @@ function install ($mod){
         }
 
         echo "\n Done :: $mod \n";
+        unlink($mod.".config");
 }
 ?>
