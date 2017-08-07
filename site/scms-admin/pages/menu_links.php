@@ -1,3 +1,8 @@
+<?php
+if(!$ic){
+exit();
+}
+?>
 <h1>Gérer les liens du menu</h1>
 
 <?php 

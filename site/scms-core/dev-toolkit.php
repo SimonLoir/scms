@@ -7,6 +7,9 @@
     <button id="scms-new-element">
         New
     </button>
+    <button id="scms-modules">
+        Modules
+    </button>
 </div>
 
 <?php
@@ -336,6 +339,10 @@ function getListItems(e) {
     }
     return array;
 }
+
+$('#scms-modules').click(function () {
+    window.location.href = "scms-admin?p=store";
+});
 
 $('#scms-new-element').click(function () {
 

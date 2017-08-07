@@ -3,11 +3,11 @@ if(!$ic){
 exit();
 }
 
-echo 'Version actuelle : <span class="server_version">';
+echo 'Version actuelle sur votre site: <span class="server_version">';
 
 include "../scms-version.php";
 
-echo '</span> version disponible sur le serveur : <span class="online_version">-Waiting for server response-</span>';
+echo '</span> version disponible sur le serveur simonloir.be: <span class="online_version">-Waiting for server response-</span>';
 ?>
 
 <div class="update_button_receiver">

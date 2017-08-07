@@ -30,9 +30,11 @@
             box-shadow:0px 0px 15px rgba(255,255,255,0.25);
             border-radius:4px;
         }
+
         div span.title{
             font-size:45px;
         }
+        
         div a{
             color:crimson;
             text-decoration:none;

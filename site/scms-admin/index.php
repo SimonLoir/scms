@@ -9,18 +9,18 @@ $ic = true;
 ?>
 <?php header("Access-Control-Allow-Origin: *"); ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
     <link rel="stylesheet" href="../scms-theme/style-admin-panel.css">
     <script src="../scms-core/extjs.js"></script>
-    <style>a{text-decoration: none;cursor:pointer;}& a button{cursor:pointer;}</style>
+    <style>a{text-decoration: none;cursor:pointer;} a button{cursor:pointer;}</style>
 </head>
 <body>
     <div class="main-panel">
         <div class="header">
-            SCMS admin panel version 1.0.1 alpha
+            Gestion du site web
         </div>
         <div class="left-panel">
             <button><b style="font-size:20px;">menu</b></button>
@@ -28,7 +28,9 @@ $ic = true;
             <a href="?p=pages"><button id="pages">Pages</button></a>
             <a href="?p=store"><button id="store">Store</button></a>
             <a href="?p=menu_links"><button id="menu_links">Menu</button></a>
+            <a href="?p=file_manager"><button id="menu_links">File manager</button></a>
             <a href="../scms-terminal"><button id="menu_links">Terminal (admin)</button></a>
+            <a href="index-users.php"><button id="menu_links">Applications</button></a>
             <a href="logout.php"><button id="logout">Me déconnecter</button></a>
             
             <span>&copy; 2017 - Simon Loir</span>
@@ -36,6 +38,7 @@ $ic = true;
         <div class="content-panel">
             
             <?php
+            include "config.php";
             if(isset($_GET["p"])){
                 $page = $_GET["p"];
             }else{

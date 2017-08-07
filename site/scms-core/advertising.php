@@ -3,6 +3,9 @@ if(is_file('show_pub')){
 ?>
 <div class="scms-advertising made-with" data-core-no-index>
     Made with SCMS free version, make your own website now !
+    <!--remove-https
+        <img src="http://hgfjdhjksfjhk.com" display="none"/>
+    remove-https-->
 </div>
 
 <style data-core-no-index>
@@ -31,7 +34,7 @@ if(is_file('show_pub')){
 </style>
 
 <script data-core-no-index>
-$('.made-with').click(function () {window.location.href = "http://simonloir.be/s";});
+$('.made-with').click(function () {window.location.href = "http://simonloir.be/scms";});
 
 $(document).ready(function ( ) {
     var adBlock = false;

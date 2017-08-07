@@ -1,4 +1,1 @@
-{
-    "posts" : ["id", "title", "content"],
-    "comments" : ["id", "page_name", "user", "content"]
-}
+{"test":["id","test","y"]}

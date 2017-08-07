@@ -26,7 +26,7 @@ if($ic && is_file("../scms-pages/base.json")){
     <h2>Nouvelle page</h2>
     
     <p>
-        Pour éviter d'avoir des problèmes d'encodage, veuillez ne pas utiliser d'espaces, d'accents et de caractères spéciaux dans le nom des pages.
+        Pour éviter d'avoir des problèmes d'encodage, veuillez ne pas utiliser d'espace, d'accent et de caractère spécial dans le nom des pages.
     </p>
 
     <form action="?p=new_page" method="post">

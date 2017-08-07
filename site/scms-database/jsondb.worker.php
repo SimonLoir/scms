@@ -94,6 +94,40 @@ class jdb
                 
                 return false;
             }
+        }elseif(strpos($statement, "CREATE TABLE") === 0){
+            // Request type : CREATE TABLE
+            // Request code : $statement
+            try{
+                preg_match('/^CREATE TABLE (.+) KEYS = (.+)$/', $statement, $matchs);
+
+                $table = $matchs[1];
+                $keys = $matchs[2];
+
+                $rtable = 'db/table-' . $table . ".json";
+
+                if(is_file($rtable)){
+                    return false;
+                }else{
+                    if(file_put_contents($rtable, "[]")){
+                        $tables = json_decode(file_get_contents('db/tables.json'), true);
+
+                        $tables[$table] = json_decode($keys);
+
+                        if(file_put_contents('db/tables.json', json_encode($tables))){
+                            return true;
+                        }else{
+                            return false;                        }
+                    }else{
+                        return false;
+                    }
+                }
+
+
+            }catch(Exception $e){
+                echo "<!-- Database error : impossible to insert values on database : database can be too busy or an error has occured : see this error message for more details : $e-->";
+                
+                return false;
+            }
         }
 
     }
